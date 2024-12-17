@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ConsulTech - Soluciones Empresariales Integrales</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+</head>
+<body>
+    <header>
+        <nav id="navbar">
+            <div class="container">
+                <a href="index.html" class="logo">ConsulTech</a>
+                <ul class="nav-links">
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li class="dropdown">
+                        <a href="#servicios">Servicios</a>
+                        <ul class="dropdown-content">
+                            <li><a href="consultoria.html">Consultoría</a></li>
+                            <li><a href="gestoria.html">Gestoría</a></li>
+                            <li><a href="sistemas.html">Sistemas Computacionales</a></li>
+                            <li><a href="mantenimiento.html">Mantenimiento</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#sobre-nosotros">Sobre Nosotros</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+                <div class="menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="inicio" class="hero">
+            <video class="hero-video" autoplay loop muted playsinline>
+                <source src="videos/hero-background.mp4" type="video/mp4">
+                Tu navegador no soporta el tag de video.
+            </video>
+            <div class="hero-overlay"></div>
+            <div class="container hero-content">
+                <h1 class="fade-in">Soluciones Empresariales Integrales</h1>
+                <p class="fade-in">Optimizamos su negocio con servicios de consultoría, gestoría, sistemas computacionales y mantenimiento de vanguardia.</p>
+                <a href="#contacto" class="btn fade-in">Contáctenos</a>
+            </div>
+        </section>
+
+        <section id="servicios" class="services">
+            <div class="container">
+                <h2 class="fade-in">Nuestros Servicios</h2>
+                <div class="service-grid">
+                    <div class="service-card fade-in">
+                        <img src="images/consultoria-icon.png" alt="Icono de Consultoría">
+                        <h3>Consultoría</h3>
+                        <p>Asesoramiento estratégico para optimizar sus procesos de negocio.</p>
+                    </div>
+                    <div class="service-card fade-in">
+                        <img src="images/gestoria-icon.png" alt="Icono de Gestoría">
+                        <h3>Gestoría</h3>
+                        <p>Gestión eficiente de trámites administrativos y legales.</p>
+                    </div>
+                    <div class="service-card fade-in">
+                        <img src="images/sistemas-icon.png" alt="Icono de Sistemas Computacionales">
+                        <h3>Sistemas Computacionales</h3>
+                        <p>Soluciones tecnológicas adaptadas a sus necesidades empresariales.</p>
+                    </div>
+                    <div class="service-card fade-in">
+                        <img src="images/mantenimiento-icon.png" alt="Icono de Mantenimiento">
+                        <h3>Mantenimiento</h3>
+                        <p>Servicio técnico especializado para mantener sus sistemas en óptimas condiciones.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="sobre-nosotros" class="about">
+            <div class="container">
+                <div class="about-content">
+                    <div class="about-text fade-in">
+                        <h2>Sobre Nosotros</h2>
+                        <p>En ConsulTech, nos dedicamos a proporcionar soluciones empresariales integrales que impulsan el crecimiento y la eficiencia de nuestros clientes. Con años de experiencia y un equipo de expertos altamente calificados, estamos comprometidos con la excelencia en cada proyecto que emprendemos.</p>
+                        <p>Nuestra misión es ser el socio estratégico que su empresa necesita para alcanzar el éxito en un mundo empresarial cada vez más competitivo y tecnológicamente avanzado.</p>
+                    </div>
+                    <div class="about-image fade-in">
+                        <img src="images/about-us.jpg" alt="Equipo de ConsulTech">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contacto" class="contact">
+            <div class="container">
+                <h2 class="fade-in">Contáctenos</h2>
+                <form id="contact-form" class="fade-in">
+                    <input type="text" name="name" placeholder="Nombre" required>
+                    <input type="email" name="email" placeholder="Correo Electrónico" required>
+                    <input type="tel" name="phone" placeholder="Teléfono">
+                    <textarea name="message" placeholder="Mensaje" required></textarea>
+                    <div class="g-recaptcha" data-sitekey="YOUR_RECAPTCHA_SITE_KEY"></div>
+                    <button type="submit">Enviar Mensaje</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 ConsulTech. Todos los derechos reservados.</p>
+            <div class="social-links">
+                <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <div class="cookie-consent">
+        <p>Este sitio web utiliza cookies para mejorar su experiencia. Al continuar navegando, acepta nuestra política de cookies.</p>
+        <button id="accept-cookies">Aceptar</button>
+    </div>
+
+    <div class="loader"></div>
+
+    <script src="main.js"></script>
+</body>
+</html>
+
