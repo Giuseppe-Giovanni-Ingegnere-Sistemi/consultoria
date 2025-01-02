@@ -3,130 +3,732 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ConsulTech - Soluciones Empresariales Integrales</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <title>NombreEmpresa - Soluciones Empresariales y Tecnológicas</title>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <style>
+        /* Estilos generales */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+
+        header h1 {
+            color: #1e40af;
+            font-size: 1.5rem;
+        }
+
+        nav ul {
+            display: flex;
+            list-style-type: none;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #1e40af;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #f1f1f1;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        /* Botones */
+        .btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-primary {
+            background-color: #1e40af;
+            color: #fff;
+        }
+
+        .btn-primary:hover {
+            background-color: #1e3a8a;
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid #1e40af;
+            color: #1e40af;
+        }
+
+        .btn-outline:hover {
+            background-color: #1e40af;
+            color: #fff;
+        }
+
+        .btn-secondary {
+            background-color: #4b5563;
+            color: #fff;
+        }
+
+        .btn-secondary:hover {
+            background-color: #374151;
+        }
+
+        .btn-text {
+            background-color: transparent;
+            color: #1e40af;
+            padding: 0;
+        }
+
+        .btn-text:hover {
+            text-decoration: underline;
+        }
+
+        .btn-large {
+            padding: 15px 30px;
+            font-size: 1.1rem;
+        }
+
+        /* Hero Section */
+        .hero {
+            background-color: #1e40af;
+            color: #fff;
+            text-align: center;
+            padding: 100px 0;
+            margin-top: 80px;
+        }
+
+        .hero h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+
+        /* Servicios Section */
+        .servicios {
+            padding: 80px 0;
+            background-color: #f3f4f6;
+        }
+
+        .servicios h2 {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .servicios-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .servicio-card {
+            background-color: #fff;
+            border-radius: 8px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .servicio-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .servicio-card i {
+            font-size: 3rem;
+            color: #1e40af;
+            margin-bottom: 20px;
+        }
+
+        .servicio-card h3 {
+            margin-bottom: 15px;
+        }
+
+        /* Nosotros Section */
+        .nosotros {
+            padding: 80px 0;
+        }
+
+        .nosotros-content {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .nosotros-image {
+            flex: 1;
+        }
+
+        .nosotros-image img {
+            width: 100%;
+            border-radius: 8px;
+        }
+
+        .nosotros-text {
+            flex: 1;
+        }
+
+        .nosotros-text h3 {
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        .nosotros-text ul {
+            list-style-type: disc;
+            margin-left: 20px;
+        }
+
+        /* Testimonios Section */
+        .testimonios {
+            background-color: #f3f4f6;
+            padding: 80px 0;
+        }
+
+        .testimonios h2 {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .testimonios-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .testimonio-card {
+            background-color: #fff;
+            border-radius: 8px;
+            padding: 30px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .testimonio-card p:first-child {
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+
+        /* Blog Section */
+        .blog {
+            padding: 80px 0;
+        }
+
+        .blog h2 {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .blog-card {
+            background-color: #fff;
+            border-radius: 8px;
+            padding: 30px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .blog-card h3 {
+            margin-bottom: 15px;
+        }
+
+        /* Contacto Section */
+        .contacto {
+            background-color: #f3f4f6;
+            padding: 80px 0;
+        }
+
+        .contacto h2 {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .contacto-content {
+            display: flex;
+            gap: 40px;
+        }
+
+        .contacto form {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .contacto form input,
+        .contacto form textarea {
+            margin-bottom: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .contacto form textarea {
+            height: 150px;
+        }
+
+        .contacto-info {
+            flex: 1;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .info-item i {
+            font-size: 1.5rem;
+            color: #1e40af;
+            margin-right: 15px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1f2937;
+            color: #fff;
+            padding: 60px 0 20px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-section h3,
+        .footer-section h4 {
+            margin-bottom: 20px;
+        }
+
+        .footer-section ul {
+            list-style-type: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-section ul li a {
+            color: #d1d5db;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section ul li a:hover {
+            color: #fff;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #374151;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header .container {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            nav ul {
+                flex-direction: column;
+                margin-top: 20px;
+            }
+
+            nav ul li {
+                margin-left: 0;
+                margin-bottom: 10px;
+            }
+
+            .cta-buttons {
+                margin-top: 20px;
+            }
+
+            .nosotros-content,
+            .contacto-content {
+                flex-direction: column;
+            }
+
+            .hero {
+                margin-top: 200px;
+            }
+        }
+    </style>
 </head>
 <body>
     <header>
-        <nav id="navbar">
-            <div class="container">
-                <a href="index.html" class="logo">ConsulTech</a>
-                <ul class="nav-links">
-                    <li><a href="#inicio">Inicio</a></li>
+        <div class="container">
+            <h1>NombreEmpresa</h1>
+            <nav>
+                <ul>
                     <li class="dropdown">
-                        <a href="#servicios">Servicios</a>
-                        <ul class="dropdown-content">
-                            <li><a href="consultoria.html">Consultoría</a></li>
-                            <li><a href="gestoria.html">Gestoría</a></li>
-                            <li><a href="sistemas.html">Sistemas Computacionales</a></li>
-                            <li><a href="mantenimiento.html">Mantenimiento</a></li>
-                        </ul>
+                        <a href="#" class="dropbtn">Servicios <i class="fas fa-chevron-down"></i></a>
+                        <div class="dropdown-content">
+                            <a href="consultoria.html">Consultoría</a>
+                            <a href="gestoria.html">Gestoría</a>
+                            <a href="sistemas.html">Sistemas Computacionales</a>
+                            <a href="mantenimiento.html">Mantenimiento</a>
+                            <a href="transporte.html">SICT</a>
+                        </div>
                     </li>
-                    <li><a href="#sobre-nosotros">Sobre Nosotros</a></li>
+                    <li><a href="#nosotros">Nosotros</a></li>
+                    <li><a href="#testimonios">Testimonios</a></li>
+                    <li><a href="#blog">Blog</a></li>
                     <li><a href="#contacto">Contacto</a></li>
                 </ul>
-                <div class="menu-toggle">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
+            </nav>
+            <div class="cta-buttons">
+                <button class="btn btn-outline">Contáctanos</button>
+                <button class="btn btn-primary">Solicita una Cotización</button>
             </div>
-        </nav>
+        </div>
     </header>
 
     <main>
-        <section id="inicio" class="hero">
-            <video class="hero-video" autoplay loop muted playsinline>
-                <source src="videos/hero-background.mp4" type="video/mp4">
-                Tu navegador no soporta el tag de video.
-            </video>
-            <div class="hero-overlay"></div>
-            <div class="container hero-content">
-                <h1 class="fade-in">Soluciones Empresariales Integrales</h1>
-                <p class="fade-in">Optimizamos su negocio con servicios de consultoría, gestoría, sistemas computacionales y mantenimiento de vanguardia.</p>
-                <a href="#contacto" class="btn fade-in">Contáctenos</a>
+        <section id="hero" class="hero">
+            <div class="container">
+                <h2>Soluciones integrales para tus necesidades empresariales y tecnológicas</h2>
+                <p>Optimizamos tu negocio con estrategias personalizadas y soluciones tecnológicas avanzadas</p>
+                <button class="btn btn-large btn-secondary">Descubre Nuestros Servicios</button>
             </div>
         </section>
 
-        <section id="servicios" class="services">
+        <section id="servicios" class="servicios">
             <div class="container">
-                <h2 class="fade-in">Nuestros Servicios</h2>
-                <div class="service-grid">
-                    <div class="service-card fade-in">
-                        <img src="images/consultoria-icon.png" alt="Icono de Consultoría">
+                <h2>Nuestros Servicios</h2>
+                <div class="servicios-grid">
+                    <div id="consultoria" class="servicio-card">
+                        <i class="fas fa-briefcase"></i>
                         <h3>Consultoría</h3>
-                        <p>Asesoramiento estratégico para optimizar sus procesos de negocio.</p>
+                        <p>Estrategias personalizadas para optimizar tu negocio.</p>
+                        <a href="consultoria.html" class="btn btn-secondary">Más información</a>
                     </div>
-                    <div class="service-card fade-in">
-                        <img src="images/gestoria-icon.png" alt="Icono de Gestoría">
+                    <div id="gestoria" class="servicio-card">
+                        <i class="fas fa-file-alt"></i>
                         <h3>Gestoría</h3>
-                        <p>Gestión eficiente de trámites administrativos y legales.</p>
+                        <p>Soluciones administrativas para agilizar tus procesos.</p>
+                        <a href="#" class="btn btn-secondary">Más información</a>
                     </div>
-                    <div class="service-card fade-in">
-                        <img src="images/sistemas-icon.png" alt="Icono de Sistemas Computacionales">
+                    <div id="sistemas" class="servicio-card">
+                        <i class="fas fa-desktop"></i>
                         <h3>Sistemas Computacionales</h3>
-                        <p>Soluciones tecnológicas adaptadas a sus necesidades empresariales.</p>
+                        <p>Desarrollo web, aplicaciones, y soporte técnico.</p>
+                        <a href="#" class="btn btn-secondary">Más información</a>
                     </div>
-                    <div class="service-card fade-in">
-                        <img src="images/mantenimiento-icon.png" alt="Icono de Mantenimiento">
+                    <div id="mantenimiento" class="servicio-card">
+                        <i class="fas fa-tools"></i>
                         <h3>Mantenimiento</h3>
-                        <p>Servicio técnico especializado para mantener sus sistemas en óptimas condiciones.</p>
+                        <p>Reparación y optimización de equipos.</p>
+                        <a href="#" class="btn btn-secondary">Más información</a>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="sobre-nosotros" class="about">
+        <section id="nosotros" class="nosotros">
             <div class="container">
-                <div class="about-content">
-                    <div class="about-text fade-in">
-                        <h2>Sobre Nosotros</h2>
-                        <p>En ConsulTech, nos dedicamos a proporcionar soluciones empresariales integrales que impulsan el crecimiento y la eficiencia de nuestros clientes. Con años de experiencia y un equipo de expertos altamente calificados, estamos comprometidos con la excelencia en cada proyecto que emprendemos.</p>
-                        <p>Nuestra misión es ser el socio estratégico que su empresa necesita para alcanzar el éxito en un mundo empresarial cada vez más competitivo y tecnológicamente avanzado.</p>
+                <h2>Sobre Nosotros</h2>
+                <div class="nosotros-content">
+                    <div class="nosotros-image">
+                        <img src="https://via.placeholder.com/600x400" alt="Equipo de trabajo">
                     </div>
-                    <div class="about-image fade-in">
-                        <img src="images/about-us.jpg" alt="Equipo de ConsulTech">
+                    <div class="nosotros-text">
+                        <p>Somos una empresa comprometida con el éxito de nuestros clientes. Nuestra misión es proporcionar soluciones integrales que impulsen el crecimiento y la eficiencia de las empresas en un mundo cada vez más digitalizado.</p>
+                        <h3>Nuestra Visión</h3>
+                        <p>Ser líderes en la transformación digital de las empresas, ofreciendo servicios de consultoría, gestoría y tecnología de vanguardia que marquen la diferencia en el mercado.</p>
+                        <h3>Nuestros Valores</h3>
+                        <ul>
+                            <li>Innovación constante</li>
+                            <li>Compromiso con la excelencia</li>
+                            <li>Integridad en cada acción</li>
+                            <li>Enfoque en el cliente</li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="contacto" class="contact">
+        <section id="testimonios" class="testimonios">
             <div class="container">
-                <h2 class="fade-in">Contáctenos</h2>
-                <form id="contact-form" class="fade-in">
-                    <input type="text" name="name" placeholder="Nombre" required>
-                    <input type="email" name="email" placeholder="Correo Electrónico" required>
-                    <input type="tel" name="phone" placeholder="Teléfono">
-                    <textarea name="message" placeholder="Mensaje" required></textarea>
-                    <div class="g-recaptcha" data-sitekey="YOUR_RECAPTCHA_SITE_KEY"></div>
-                    <button type="submit">Enviar Mensaje</button>
-                </form>
+                <h2>Lo que dicen nuestros clientes</h2>
+                <div class="testimonios-grid">
+                    <div class="testimonio-card">
+                        <p>"Los servicios de consultoría nos ayudaron a optimizar nuestros procesos y aumentar nuestra productividad en un 30%."</p>
+                        <h4>María González</h4>
+                        <p>Tech Innovators S.A.</p>
+                    </div>
+                    <div class="testimonio-card">
+                        <p>"El sistema de gestión implementado por el equipo ha revolucionado nuestra forma de trabajar. Ahora somos mucho más eficientes."</p>
+                        <h4>Carlos Rodríguez</h4>
+                        <p>Logística Global</p>
+                    </div>
+                    <div class="testimonio-card">
+                        <p>"El soporte técnico es excepcional. Siempre están disponibles y resuelven nuestros problemas rápidamente."</p>
+                        <h4>Ana Martínez</h4>
+                        <p>Retail Solutions</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="blog" class="blog">
+            <div class="container">
+                <h2>Últimas Publicaciones</h2>
+                <div class="blog-grid">
+                    <div class="blog-card">
+                        <h3>¿Por qué es importante mantener tus sistemas actualizados?</h3>
+                        <p>Descubre cómo las actualizaciones regulares pueden mejorar la seguridad y eficiencia de tu empresa.</p>
+                        <a href="#" class="btn btn-text">Leer más</a>
+                    </div>
+                    <div class="blog-card">
+                        <h3>Claves para una buena gestión empresarial</h3>
+                        <p>Aprende las mejores prácticas para optimizar la gestión de tu negocio y aumentar la productividad.</p>
+                        <a href="#" class="btn btn-text">Leer más</a>
+                    </div>
+                    <div class="blog-card">
+                        <h3>Tendencias tecnológicas para empresas en 2025</h3>
+                        <p>Conoce las innovaciones que están transformando el panorama empresarial y cómo aprovecharlas.</p>
+                        <a href="#" class="btn btn-text">Leer más</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contacto" class="contacto">
+            <div class="container">
+                <h2>Contáctanos</h2>
+                <div class="contacto-content">
+                    <form id="contactForm">
+                        <input type="text" name="nombre" placeholder="Nombre" required>
+                        <input type="email" name="email" placeholder="Correo electrónico" required>
+                        <textarea name="mensaje" placeholder="Mensaje" required></textarea>
+                        <button type="submit" class="btn btn-primary">Enviar Mensaje</button>
+                    </form>
+                    <div class="contacto-info">
+                        <div class="info-item">
+                            <i class="fas fa-phone"></i>
+                            <p>+52 123 456 7890</p>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-envelope"></i>
+                            <p>info@nombreempresa.com</p>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <p>Calle Principal #123, Ciudad, Estado, CP 12345</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
     </main>
 
     <footer>
         <div class="container">
-            <p>&copy; 2023 ConsulTech. Todos los derechos reservados.</p>
-            <div class="social-links">
-                <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
-                <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
-                <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>NombreEmpresa</h3>
+                    <p>Soluciones integrales para tus necesidades empresariales y tecnológicas</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Enlaces Rápidos</h4>
+                    <ul>
+                        <li><a href="#servicios">Servicios</a></li>
+                        <li><a href="#nosotros">Nosotros</a></li>
+                        <li><a href="#testimonios">Testimonios</a></li>
+                        <li><a href="#blog">Blog</a></li>
+                        <li><a href="#contacto">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Servicios</h4>
+                    <ul>
+                        <li><a href="consultoria.html">Consultoría</a></li>
+                        <li><a href="#gestoria">Gestoría</a></li>
+                        <li><a href="#sistemas">Sistemas Computacionales</a></li>
+                        <li><a href="#mantenimiento">Mantenimiento</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contáctanos</h4>
+                    <p>Calle Principal #123, Ciudad, Estado, CP 12345</p>
+                    <p>Teléfono: +52 123 456 7890</p>
+                    <p>Email: info@nombreempresa.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 NombreEmpresa. Todos los derechos reservados.</p>
             </div>
         </div>
     </footer>
 
-    <div class="cookie-consent">
-        <p>Este sitio web utiliza cookies para mejorar su experiencia. Al continuar navegando, acepta nuestra política de cookies.</p>
-        <button id="accept-cookies">Aceptar</button>
-    </div>
+    <script>
+        // JavaScript para mejorar la interactividad
 
-    <div class="loader"></div>
+        // Smooth scrolling para los enlaces internos
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
 
-    <script src="main.js"></script>
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Validación del formulario de contacto
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            let nombre = this.nombre.value.trim();
+            let email = this.email.value.trim();
+            let mensaje = this.mensaje.value.trim();
+            
+            if (nombre === '' || email === '' || mensaje === '') {
+                alert('Por favor, complete todos los campos.');
+                return;
+            }
+            
+            if (!isValidEmail(email)) {
+                alert('Por favor, ingrese un correo electrónico válido.');
+                return;
+            }
+            
+            // Aquí iría el código para enviar el formulario
+            alert('Mensaje enviado con éxito. Gracias por contactarnos!');
+            this.reset();
+        });
+
+        function isValidEmail(email) {
+            const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+            return re.test(String(email).toLowerCase());
+        }
+
+        // Animación para las tarjetas de servicios
+        const servicioCards = document.querySelectorAll('.servicio-card');
+        
+        servicioCards.forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.style.transform = 'translateY(-10px)';
+            });
+            
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'translateY(0)';
+            });
+        });
+
+        // Mostrar/ocultar el menú en dispositivos móviles
+        const menuToggle = document.createElement('button');
+        menuToggle.textContent = '☰';
+        menuToggle.classList.add('menu-toggle');
+        document.querySelector('header .container').prepend(menuToggle);
+
+        menuToggle.addEventListener('click', () => {
+            const nav = document.querySelector('nav');
+            nav.style.display = nav.style.display === 'none' || nav.style.display === '' ? 'block' : 'none';
+        });
+
+        // Ajustar estilos para el menú móvil
+        const style = document.createElement('style');
+        style.textContent = `
+            @media (max-width: 768px) {
+                .menu-toggle {
+                    display: block;
+                    background: none;
+                    border: none;
+                    font-size: 1.5rem;
+                    cursor: pointer;
+                }
+                nav {
+                    display: none;
+                    width: 100%;
+                }
+                nav ul {
+                    flex-direction: column;
+                }
+                nav ul li {
+                    margin: 10px 0;
+                }
+            }
+            @media (min-width: 769px) {
+                .menu-toggle {
+                    display: none;
+                }
+                nav {
+                    display: block !important;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
 </body>
 </html>
-

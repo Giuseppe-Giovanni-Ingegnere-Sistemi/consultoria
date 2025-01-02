@@ -3,84 +3,349 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mantenimiento - ConsulTech</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Servicios de Mantenimiento - NombreEmpresa</title>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <style>
+        /* Estilos generales */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+
+        header h1 {
+            color: #1e40af;
+            font-size: 1.5rem;
+        }
+
+        nav ul {
+            display: flex;
+            list-style-type: none;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #1e40af;
+        }
+
+        /* Botones */
+        .btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-primary {
+            background-color: #1e40af;
+            color: #fff;
+        }
+
+        .btn-primary:hover {
+            background-color: #1e3a8a;
+        }
+
+        /* Hero Section */
+        .hero {
+            background-color: #1e40af;
+            color: #fff;
+            text-align: center;
+            padding: 100px 0;
+            margin-top: 80px;
+        }
+
+        .hero h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+
+        /* Contenido principal */
+        .main-content {
+            padding: 80px 0;
+        }
+
+        .main-content h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .main-content p {
+            margin-bottom: 20px;
+        }
+
+        .services-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .services-list li {
+            margin-bottom: 10px;
+            padding-left: 30px;
+            position: relative;
+        }
+
+        .services-list li:before {
+            content: "\f00c";
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            color: #1e40af;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1f2937;
+            color: #fff;
+            padding: 60px 0 20px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-section h3,
+        .footer-section h4 {
+            margin-bottom: 20px;
+        }
+
+        .footer-section ul {
+            list-style-type: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-section ul li a {
+            color: #d1d5db;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section ul li a:hover {
+            color: #fff;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #374151;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header .container {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            nav ul {
+                flex-direction: column;
+                margin-top: 20px;
+            }
+
+            nav ul li {
+                margin-left: 0;
+                margin-bottom: 10px;
+            }
+
+            .hero {
+                margin-top: 200px;
+            }
+        }
+    </style>
 </head>
 <body>
     <header>
-        <nav id="navbar">
-            <div class="container">
-                <a href="index.html" class="logo">ConsulTech</a>
-                <ul class="nav-links">
+        <div class="container">
+            <h1>NombreEmpresa</h1>
+            <nav>
+                <ul>
                     <li><a href="index.html">Inicio</a></li>
-                    <li class="dropdown">
-                        <a href="#servicios">Servicios</a>
-                        <ul class="dropdown-content">
-                            <li><a href="consultoria.html">Consultoría</a></li>
-                            <li><a href="gestoria.html">Gestoría</a></li>
-                            <li><a href="sistemas.html">Sistemas Computacionales</a></li>
-                            <li><a href="mantenimiento.html">Mantenimiento</a></li>
-                        </ul>
-                    </li>
+                    <li><a href="index.html#servicios">Servicios</a></li>
+                    <li><a href="index.html#nosotros">Nosotros</a></li>
                     <li><a href="index.html#contacto">Contacto</a></li>
                 </ul>
-                <div class="menu-toggle">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-            </div>
-        </nav>
+            </nav>
+        </div>
     </header>
 
     <main>
-        <section class="service-hero">
+        <section class="hero">
             <div class="container">
-                <h1>Servicios de Mantenimiento</h1>
-                <p>Mantenemos sus sistemas funcionando de manera óptima.</p>
+                <h2>Servicios de Mantenimiento</h2>
+                <p>Mantén tus equipos en óptimas condiciones para un rendimiento máximo</p>
             </div>
         </section>
 
-        <section class="service-content">
+        <section class="main-content">
             <div class="container">
-                <h2 class="fade-in">Nuestros Servicios de Mantenimiento</h2>
-                <div class="service-grid">
-                    <div class="service-card fade-in">
-                        <h3>Mantenimiento Preventivo</h3>
-                        <p>Realizamos revisiones periódicas para prevenir problemas futuros.</p>
-                    </div>
-                    <div class="service-card fade-in">
-                        <h3>Mantenimiento Correctivo</h3>
-                        <p>Solucionamos rápidamente cualquier problema que pueda surgir.</p>
-                    </div>
-                    <div class="service-card fade-in">
-                        <h3>Actualizaciones de Software</h3>
-                        <p>Mantenemos sus sistemas actualizados con las últimas versiones y parches de seguridad.</p>
-                    </div>
-                    <div class="service-card fade-in">
-                        <h3>Soporte Técnico</h3>
-                        <p>Ofrecemos asistencia técnica continua para resolver sus dudas y problemas.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
+                <h2>Nuestros Servicios de Mantenimiento</h2>
+                <p>En NombreEmpresa, entendemos la importancia de mantener tus equipos y sistemas en perfecto estado de funcionamiento. Nuestro equipo de técnicos altamente capacitados ofrece servicios de mantenimiento integral para garantizar la eficiencia y longevidad de tu infraestructura tecnológica.</p>
+                
+                <h3>Ofrecemos servicios de mantenimiento en las siguientes áreas:</h3>
+                <ul class="services-list">
+                    <li>Mantenimiento preventivo de hardware</li>
+                    <li>Actualización y optimización de software</li>
+                    <li>Limpieza y mantenimiento de equipos de cómputo</li>
+                    <li>Diagnóstico y reparación de fallas</li>
+                    <li>Mantenimiento de redes y servidores</li>
+                    <li>Respaldo y recuperación de datos</li>
+                </ul>
 
-        <section class="cta">
-            <div class="container">
-                <h2 class="fade-in">¿Necesita mantener sus sistemas en óptimas condiciones?</h2>
-                <p class="fade-in">Confíe en nosotros para mantener su infraestructura tecnológica funcionando sin problemas.</p>
-                <a href="index.html#contacto" class="btn fade-in">Contactar Ahora</a>
+                <h3>¿Por qué elegir nuestros servicios de mantenimiento?</h3>
+                <ul class="services-list">
+                    <li>Técnicos certificados y altamente capacitados</li>
+                    <li>Servicio rápido y eficiente</li>
+                    <li>Uso de herramientas y tecnologías de última generación</li>
+                    <li>Planes de mantenimiento personalizados</li>
+                    <li>Garantía en todos nuestros servicios</li>
+                </ul>
+
+                <p>Nuestro objetivo es mantener tu infraestructura tecnológica funcionando sin problemas, minimizando el tiempo de inactividad y maximizando la productividad de tu empresa. Con nuestros servicios de mantenimiento, puedes estar tranquilo sabiendo que tus equipos están en las mejores manos.</p>
+
+                <a href="index.html#contacto" class="btn btn-primary">Agenda un servicio de mantenimiento</a>
             </div>
         </section>
     </main>
 
     <footer>
         <div class="container">
-            <p>&copy; 2023 ConsulTech. Todos los derechos reservados.</p>
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>NombreEmpresa</h3>
+                    <p>Soluciones integrales para tus necesidades empresariales y tecnológicas</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Enlaces Rápidos</h4>
+                    <ul>
+                        <li><a href="index.html#servicios">Servicios</a></li>
+                        <li><a href="index.html#nosotros">Nosotros</a></li>
+                        <li><a href="index.html#testimonios">Testimonios</a></li>
+                        <li><a href="index.html#blog">Blog</a></li>
+                        <li><a href="index.html#contacto">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contáctanos</h4>
+                    <p>Calle Principal #123, Ciudad, Estado, CP 12345</p>
+                    <p>Teléfono: +52 123 456 7890</p>
+                    <p>Email: info@nombreempresa.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 NombreEmpresa. Todos los derechos reservados.</p>
+            </div>
         </div>
     </footer>
 
-    <script src="main.js"></script>
+    <script>
+        // JavaScript para mejorar la interactividad
+
+        // Smooth scrolling para los enlaces internos
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Mostrar/ocultar el menú en dispositivos móviles
+        const menuToggle = document.createElement('button');
+        menuToggle.textContent = '☰';
+        menuToggle.classList.add('menu-toggle');
+        document.querySelector('header .container').prepend(menuToggle);
+
+        menuToggle.addEventListener('click', () => {
+            const nav = document.querySelector('nav');
+            nav.style.display = nav.style.display === 'none' || nav.style.display === '' ? 'block' : 'none';
+        });
+
+        // Ajustar estilos para el menú móvil
+        const style = document.createElement('style');
+        style.textContent = `
+            @media (max-width: 768px) {
+                .menu-toggle {
+                    display: block;
+                    background: none;
+                    border: none;
+                    font-size: 1.5rem;
+                    cursor: pointer;
+                }
+                nav {
+                    display: none;
+                    width: 100%;
+                }
+                nav ul {
+                    flex-direction: column;
+                }
+                nav ul li {
+                    margin: 10px 0;
+                }
+            }
+            @media (min-width: 769px) {
+                .menu-toggle {
+                    display: none;
+                }
+                nav {
+                    display: block !important;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
 </body>
 </html>
-

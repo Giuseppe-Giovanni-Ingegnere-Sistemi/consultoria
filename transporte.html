@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Servicios de Consultoría - NombreEmpresa</title>
+    <title>Trámites SICT - NombreEmpresa</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     <style>
         /* Estilos generales */
@@ -139,6 +140,32 @@
             color: #1e40af;
         }
 
+        /* Tabla de trámites */
+        .tramites-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        .tramites-table th, .tramites-table td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+
+        .tramites-table th {
+            background-color: #f2f2f2;
+            font-weight: bold;
+        }
+
+        .tramites-table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        .tramites-table tr:hover {
+            background-color: #f5f5f5;
+        }
+
         /* Footer */
         footer {
             background-color: #1f2937;
@@ -202,6 +229,53 @@
             .hero {
                 margin-top: 200px;
             }
+
+            .tramites-table {
+                font-size: 14px;
+            }
+        }
+
+        /* New styles for videos and images */
+        .video-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            margin-bottom: 2rem;
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        .image-container {
+            width: 100%;
+            margin-bottom: 2rem;
+        }
+        .image-container img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .fade-in {
+            animation: fadeIn 1s ease-in;
+        }
+        @keyframes slideInFromRight {
+            0% {
+                transform: translateX(100%);
+            }
+            100% {
+                transform: translateX(0);
+            }
+        }
+        .slide-in-right {
+            animation: 1s ease-out 0s 1 slideInFromRight;
         }
     </style>
 </head>
@@ -223,38 +297,89 @@
     <main>
         <section class="hero">
             <div class="container">
-                <h2>Servicios de Consultoría</h2>
-                <p>Optimizamos tu negocio con estrategias personalizadas</p>
+                <h2 class="animate__animated animate__fadeInDown">Trámites SICT</h2>
+                <p class="animate__animated animate__fadeInUp">Gestión de permisos, licencias y trámites ante la Secretaría de Infraestructura, Comunicaciones y Transportes</p>
+                <div class="video-container animate__animated animate__zoomIn">
+                    <iframe src="" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                </div>
             </div>
         </section>
 
         <section class="main-content">
             <div class="container">
-                <h2>Nuestros Servicios de Consultoría</h2>
-                <p>En NombreEmpresa, ofrecemos servicios de consultoría de primer nivel para ayudar a tu empresa a alcanzar su máximo potencial. Nuestro equipo de expertos trabaja estrechamente contigo para desarrollar estrategias personalizadas que impulsen el crecimiento y la eficiencia de tu negocio.</p>
+                <h2 class="fade-in">Nuestros Servicios de Trámites SICT</h2>
+                <p class="slide-in-right">En NombreEmpresa, nos especializamos en la gestión de trámites ante la Secretaría de Infraestructura, Comunicaciones y Transportes (SICT). Nuestro equipo de expertos se encarga de facilitar y agilizar todos los procesos relacionados con permisos, licencias y autorizaciones en el sector de transporte y comunicaciones.</p>
                 
-                <h3>Ofrecemos consultoría en las siguientes áreas:</h3>
-                <ul class="services-list">
-                    <li>Estrategia empresarial</li>
-                    <li>Optimización de procesos</li>
-                    <li>Gestión del cambio</li>
-                    <li>Análisis de mercado</li>
-                    <li>Planificación financiera</li>
-                    <li>Desarrollo organizacional</li>
+                <div class="image-container animate__animated animate__fadeIn">
+                    <img src="/placeholder.svg?height=400&width=600" alt="Oficina de trámites SICT">
+                </div>
+                
+                <h3 class="fade-in">Ofrecemos servicios de gestión para:</h3>
+                <ul class="services-list animate__animated animate__fadeInLeft">
+                    <li>Pre-registro de trámites</li>
+                    <li>Trámites de placas para diversos tipos de vehículos</li>
+                    <li>Autorizaciones especiales (conectividad, altura, doble remolque)</li>
+                    <li>Gestión de centros de capacitación</li>
+                    <li>Trámites para terminales de pasaje</li>
+                    <li>Verificaciones físico-mecánicas y de contaminantes</li>
                 </ul>
 
-                <h3>¿Por qué elegir nuestros servicios de consultoría?</h3>
-                <ul class="services-list">
-                    <li>Experiencia en múltiples industrias</li>
-                    <li>Enfoque personalizado para cada cliente</li>
-                    <li>Resultados medibles y orientados a objetivos</li>
-                    <li>Equipo de consultores altamente calificados</li>
-                    <li>Metodologías probadas y actualizadas</li>
+                <h3 class="fade-in">Tipos de placas que gestionamos:</h3>
+                <ul class="services-list animate__animated animate__fadeInRight">
+                    <li>Carga general</li>
+                    <li>Paquetería y mensajería</li>
+                    <li>Carga especializada</li>
+                    <li>Turismo</li>
+                    <li>Pasaje</li>
+                    <li>Grúas industriales</li>
+                    <li>Grúas Transfer</li>
+                    <li>Transfronterizo</li>
+                    <li>De traslado</li>
+                    <li>Vehículos eléctricos</li>
                 </ul>
 
-                <p>Estamos comprometidos con el éxito de tu empresa. Nuestro objetivo es proporcionarte las herramientas y estrategias necesarias para superar los desafíos del mercado actual y posicionar tu negocio para un crecimiento sostenible.</p>
+                <h3 class="fade-in">Lista completa de trámites disponibles:</h3>
+                <div class="table-container animate__animated animate__fadeIn">
+                    <table class="tramites-table">
+                        <thead>
+                            <tr>
+                                <th>No.</th>
+                                <th>Nombre oficial del trámite o servicio</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>Modificación de la tarjeta de circulación</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Reposición de tarjeta de circulación y/o placas metálicas de identificación</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>Canje de placas metálicas de identificación vehicular asignadas a las unidades que operan en los servicios de autotransporte federal de carga</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>Canje de placas metálicas de identificación vehicular asignadas a las unidades que operan servicios de autotransporte federal de pasaje y turismo</td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>Canje de placas metálicas de identificación asignadas a los vehículos que operan en los servicios de autotransporte federal de carga especializada para el transporte de materiales, residuos, remanentes y desechos peligrosos.</td>
+                            </tr>
+                            <!-- Continuar con los demás trámites... -->
+                            <tr>
+                                <td>78</td>
+                                <td>Obtención de placas metálicas de identificación para vehículos diagnóstico</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
 
-                <a href="index.html#contacto" class="btn btn-primary">Solicita una consulta</a>
+                <p class="slide-in-right">Nuestro objetivo es simplificar y agilizar todos estos trámites para nuestros clientes, asegurando que cumplan con todas las regulaciones y requisitos de la SICT. Con nuestra experiencia y conocimiento, podemos ayudarte a navegar por los complejos procesos burocráticos de manera eficiente.</p>
+
+                <a href="index.html#contacto" class="btn btn-primary animate__animated animate__pulse">Solicita nuestros servicios de trámites SICT</a>
             </div>
         </section>
     </main>
@@ -289,7 +414,10 @@
         </div>
     </footer>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow.js/1.1.2/wow.min.js"></script>
     <script>
+        new WOW().init();
+
         // JavaScript para mejorar la interactividad
 
         // Smooth scrolling para los enlaces internos
@@ -346,6 +474,20 @@
             }
         `;
         document.head.appendChild(style);
+
+
+        // New animation for scroll
+        window.addEventListener('scroll', function() {
+            var elements = document.querySelectorAll('.fade-in, .slide-in-right');
+            elements.forEach(function(element) {
+                var position = element.getBoundingClientRect();
+                if(position.top < window.innerHeight && position.bottom >= 0) {
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateX(0)';
+                }
+            });
+        });
     </script>
 </body>
 </html>
+
